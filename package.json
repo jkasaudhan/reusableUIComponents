@@ -1,0 +1,23 @@
+{
+  "name": "reusableuicomponents",
+  "version": "1.0.0",
+  "description": "Pure JS is used to create ui components such as dropdown, interactive tables, sliders etc",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc -w widgets/**/*.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkasaudhan/reusableUIComponents.git"
+  },
+  "author": "Jitendra Kasaudhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkasaudhan/reusableUIComponents/issues"
+  },
+  "homepage": "https://github.com/jkasaudhan/reusableUIComponents#readme",
+  "devDependencies": {
+    "typescript": "^2.4.1"
+  }
+}
