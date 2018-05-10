@@ -3,10 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link type="text/css" href="style.css">
+    <link rel="stylesheet" href="dropdown.css">
 </head>
 <body>
 <h2>Dropdown</h2>
+<div class="box">Extra Element Should Be Highlighted On Tab Keys</div>
+<div class="box">Extra Element</div>
+<div class="box">Extra Element</div>
+<div class="widgetContainer">
+    <div class="selectDropdown focused">
+        <div>Countries</div>
+        <div class="options">
+            <div class="option" data-value="1">Germany</div>
+            <div class="option" data-value="2">Nepal</div>
+            <div class="option" data-value="3">Australia</div>
+            <div class="option" data-value="4">USA</div>
+            <div class="option" data-value="5">Canada</div>
+            <div class="option" data-value="6">India</div>
+            <div class="option" data-value="6">Iran</div>
+            <div class="option" data-value="7">Romania</div>
+        </div>
+    </div>
+</div>
+<div class="box">Extra Element</div>
+<div class="box">Extra Element</div>
+<div class="box">Extra Element</div>
+<div class="infoBoard">
+    <h3>Features</h3>
+    <p>Search by typed key</p>
+    <p>Toggle by tab key</p>
+    <p>Select first or last item initially when key up/down is pressed</p>
+    <p>Up/Down arrow key loops through the elements</p>
+    <p>Close dropdown when esc key pressed</p>
+</div>
 
 <script src="dropdown.js"></script>
 </body>

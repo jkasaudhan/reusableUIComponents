@@ -1,0 +1,35 @@
+.widgetContainer {
+    margin: 0 auto;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+.box {
+    border: 1px solid #ccc;
+    background: #ccc;
+    padding: 10px;
+    color: #fff;
+    margin: 10px;
+}
+
+.selectDropdown > div:first-child,
+ .selectDropdown .option {
+    padding: 10px 20px;
+    text-align: left;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.selectDropdown .options {
+    display: none;
+}
+
+.selectDropdown .options.open {
+    display: block;
+}
+
+.selectDropdown .option.active {
+    color: #fff;
+    background: #666;
+}
+
