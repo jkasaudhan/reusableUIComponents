@@ -7,11 +7,19 @@
 </head>
 <body>
 <h2>Dropdown</h2>
-<div class="box">Extra Element Should Be Highlighted On Tab Keys</div>
-<div class="box">Extra Element</div>
-<div class="box">Extra Element</div>
+<div class="box">Extra Element Should Be Highlighted On Tab Keys
+    <a href="#">Anchor link 1 is focusable when tabbed </a>
+</div>
+<div class="box">Extra Element
+    <a href="#">Anchor link 1 is focusable when tabbed </a></div>
+<div class="box">Extra Element
+    <div>Not focusable by default</div>
+</div>
+<div class="box" tabindex="1">Extra Element
+    <div>Not focusable by default</div>
+</div>
 <div class="widgetContainer">
-    <div class="selectDropdown focused">
+    <div class="selectDropdown " tabindex="2">
         <div>Countries</div>
         <div class="options">
             <div class="option" data-value="1">Germany</div>
@@ -25,8 +33,8 @@
         </div>
     </div>
 </div>
-<div class="box">Extra Element</div>
-<div class="box">Extra Element</div>
+<div class="box" tabindex="3">Extra Element</div>
+<div class="box" tabindex="4">Extra Element</div>
 <div class="box">Extra Element</div>
 <div class="infoBoard">
     <h3>Features</h3>
