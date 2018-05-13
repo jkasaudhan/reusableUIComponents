@@ -2,6 +2,10 @@ var Dropdown = /** @class */ (function () {
     function Dropdown(widget) {
         this.widget = widget;
         this.elements = {};
+        this.search = "";
+        this.searchRegex = /([a-zA-Z]+)/i;
+        this.searchInterval = 0;
+        this.activateSearch = true;
         if (this.widget === null) {
             return;
         }
@@ -75,14 +79,45 @@ var Dropdown = /** @class */ (function () {
                     _this.toggleDropdown();
                     e.preventDefault();
                     break;
+                case 27:
+                    // esc key
+                    _this.closeDropdown();
+                    break;
                 default:
                     // for shift tab key
                     if (e.shiftKey && keyCode === 9) {
                         // focus previous tabable element
                         // this.focusPrevious();
                     }
+                    if (_this.searchRegex.test(e.key)) {
+                        _this.search += e.key;
+                        _this.highlightSearch();
+                        _this.activateSearch = false;
+                    }
             }
         });
+    };
+    Dropdown.prototype.highlightSearch = function () {
+        var _this = this;
+        if (!this.activateSearch) {
+            return;
+        }
+        this.searchInterval = window.setTimeout(function () {
+            _this.matchOption();
+            window.clearTimeout(_this.searchInterval);
+            _this.search = "";
+            _this.activateSearch = true;
+        }, 500);
+    };
+    Dropdown.prototype.matchOption = function () {
+        for (var i = 0; i < this.elements.optionArray.length; i++) {
+            var content = this.elements.optionArray[i].innerText;
+            if (content.toLowerCase().indexOf(this.search) >= 0) {
+                this.elements.currentOptionIndex = i;
+                this.activateCurrentOption();
+                break;
+            }
+        }
     };
     Dropdown.prototype.mouseOptions = function () {
         var _this = this;
@@ -228,6 +263,9 @@ var Dropdown = /** @class */ (function () {
         }
     };
     Dropdown.prototype.closeDropdown = function () {
+        if (this.elements.options === null) {
+            return;
+        }
         this.elements.options.classList.remove("open");
     };
     Dropdown.prototype.clearFocused = function () {
