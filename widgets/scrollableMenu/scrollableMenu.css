@@ -1,0 +1,51 @@
+body {
+    position: relative;
+}
+
+.widgetContainer {
+    margin: 0 auto;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+.box {
+    padding: 10px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    margin: 20px;
+    width: 600px;
+    float: right;
+}
+.sidebar {
+    position: absolute;
+    min-width: 200px;
+}
+
+.sidebar a {
+    position: relative;
+    text-decoration: none;
+    padding: 10px;
+    color: #fff;
+    background: #ff0000;
+    border: 1px solid #fff;
+    display: block;
+}
+.sidebar.fixed {
+    position: fixed;
+    top: 0;
+    left: 10px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: #666;
+}
+.sidebar .active:after {
+    position: absolute;
+    content: "";
+    background: blue;
+    width: 15px;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
